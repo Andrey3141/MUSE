@@ -22,6 +22,9 @@ import com.example.muse.core.media.MediaItemFactory
 import com.example.muse.databinding.ActivityMainBinding
 import com.example.muse.ui.library.LibraryViewModel
 import com.example.muse.ui.library.TrackAdapter
+import com.example.muse.update.UpdateCheckResult
+import com.example.muse.update.UpdateChecker
+import com.example.muse.update.UpdateDialog
 import com.google.common.util.concurrent.MoreExecutors
 import kotlinx.coroutines.launch
 
@@ -80,7 +83,9 @@ class MainActivity : ComponentActivity() {
         lifecycleScope.launch {
             when (val result = UpdateChecker.checkForUpdate(applicationContext)) {
                 is UpdateCheckResult.UpdateAvailable -> {
-                    UpdateDialog.show(this@MainActivity, result.info)
+                    if (!isFinishing && !isDestroyed) {
+                        UpdateDialog.show(this@MainActivity, result.info)
+                    }
                 }
                 else -> { /* тихо игнорируем */ }
             }
@@ -142,11 +147,9 @@ class MainActivity : ComponentActivity() {
             return
         }
 
-        // Индекс выбранного трека в исходном списке
         val originalIndex = tracks.indexOfFirst { it.id == track.id }
         if (originalIndex < 0) return
 
-        // Если выбранный трек недоступен — не подменять его другим
         val filteredIndex = result.sourceIndices.indexOf(originalIndex)
         if (filteredIndex < 0) {
             Toast.makeText(this, "Этот трек недоступен: нет ни оригинала, ни копии", Toast.LENGTH_LONG).show()

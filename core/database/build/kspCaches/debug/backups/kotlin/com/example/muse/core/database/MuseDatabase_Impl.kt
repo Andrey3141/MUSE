@@ -40,15 +40,15 @@ public class MuseDatabase_Impl : MuseDatabase() {
   }
 
   protected override fun createOpenDelegate(): RoomOpenDelegate {
-    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(2, "f1cfe4638b8c8a6558f2c94261a76b4b", "066a2c24de5bf3cb91020f60ccabd5d7") {
+    val _openDelegate: RoomOpenDelegate = object : RoomOpenDelegate(5, "c7a22805d982223274385dc21ae21888", "00d6ac66004bbdc9e4dfadcde7ab6954") {
       public override fun createAllTables(connection: SQLiteConnection) {
-        connection.execSQL("CREATE TABLE IF NOT EXISTS `tracks` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `artist` TEXT NOT NULL, `album` TEXT NOT NULL, `durationMs` INTEGER NOT NULL, `uri` TEXT NOT NULL, `artworkUri` TEXT, `dateAdded` INTEGER NOT NULL, `stableKey` TEXT NOT NULL, `vectorVersion` INTEGER NOT NULL, `analyzedAt` INTEGER, PRIMARY KEY(`id`))")
+        connection.execSQL("CREATE TABLE IF NOT EXISTS `tracks` (`id` TEXT NOT NULL, `title` TEXT NOT NULL, `artist` TEXT NOT NULL, `album` TEXT NOT NULL, `durationMs` INTEGER NOT NULL, `uri` TEXT NOT NULL, `artworkUri` TEXT, `dateAdded` INTEGER NOT NULL, `stableKey` TEXT NOT NULL, `vectorVersion` INTEGER NOT NULL, `analyzedAt` INTEGER, `museCopyPath` TEXT, `copyStatus` TEXT NOT NULL, `originalAvailable` INTEGER NOT NULL, `nextAttemptAt` INTEGER NOT NULL, `claimEpoch` INTEGER NOT NULL, `claimedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))")
         connection.execSQL("CREATE UNIQUE INDEX IF NOT EXISTS `index_tracks_stableKey` ON `tracks` (`stableKey`)")
         connection.execSQL("CREATE TABLE IF NOT EXISTS `play_events` (`id` TEXT NOT NULL, `sessionId` TEXT NOT NULL, `playbackAttemptId` TEXT NOT NULL, `trackId` TEXT NOT NULL, `playbackItemId` TEXT NOT NULL, `eventType` TEXT NOT NULL, `positionMs` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL, `synced` INTEGER NOT NULL, PRIMARY KEY(`id`))")
         connection.execSQL("CREATE TABLE IF NOT EXISTS `playlists` (`id` TEXT NOT NULL, `name` TEXT NOT NULL, `createdAt` INTEGER NOT NULL, PRIMARY KEY(`id`))")
         connection.execSQL("CREATE TABLE IF NOT EXISTS `playlist_tracks` (`playlistId` TEXT NOT NULL, `trackId` TEXT NOT NULL, `position` INTEGER NOT NULL, PRIMARY KEY(`playlistId`, `trackId`))")
         connection.execSQL("CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)")
-        connection.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'f1cfe4638b8c8a6558f2c94261a76b4b')")
+        connection.execSQL("INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'c7a22805d982223274385dc21ae21888')")
       }
 
       public override fun dropAllTables(connection: SQLiteConnection) {
@@ -85,6 +85,12 @@ public class MuseDatabase_Impl : MuseDatabase() {
         _columnsTracks.put("stableKey", TableInfo.Column("stableKey", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
         _columnsTracks.put("vectorVersion", TableInfo.Column("vectorVersion", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
         _columnsTracks.put("analyzedAt", TableInfo.Column("analyzedAt", "INTEGER", false, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsTracks.put("museCopyPath", TableInfo.Column("museCopyPath", "TEXT", false, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsTracks.put("copyStatus", TableInfo.Column("copyStatus", "TEXT", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsTracks.put("originalAvailable", TableInfo.Column("originalAvailable", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsTracks.put("nextAttemptAt", TableInfo.Column("nextAttemptAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsTracks.put("claimEpoch", TableInfo.Column("claimEpoch", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
+        _columnsTracks.put("claimedAt", TableInfo.Column("claimedAt", "INTEGER", true, 0, null, TableInfo.CREATED_FROM_ENTITY))
         val _foreignKeysTracks: MutableSet<TableInfo.ForeignKey> = mutableSetOf()
         val _indicesTracks: MutableSet<TableInfo.Index> = mutableSetOf()
         _indicesTracks.add(TableInfo.Index("index_tracks_stableKey", true, listOf("stableKey"), listOf("ASC")))

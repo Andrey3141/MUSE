@@ -1,16 +1,16 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml:2:13-83
-INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml:2:13-83
+ADDED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml:2:13-83
+INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml:2:13-83
 	package
-		INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml
+		INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml
 	xmlns:android
-		ADDED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml:2:23-81
+		ADDED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml:2:23-81
 uses-sdk
-INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml reason: use-sdk injection requested
-INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml
-INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml
+INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml reason: use-sdk injection requested
+INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml
+INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml
 	android:targetSdkVersion
-		INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml
+		INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml
 	android:minSdkVersion
-		INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest9283743193599646222.xml
+		INJECTED from /home/lenovo/AndroidStudioProjects/MUSE/core/media/build/intermediates/tmp/ProcessLibraryManifest/debug/tempAndroidManifest4749394497659187394.xml

@@ -25,8 +25,8 @@ sealed class UpdateCheckResult {
 
 object UpdateChecker {
 
-    private const val GITHUB_OWNER = "YOUR_GITHUB_USERNAME" // ← замени
-    private const val GITHUB_REPO = "MUSE"                  // ← замени
+    private const val GITHUB_OWNER = "Andrey3141"
+    private const val GITHUB_REPO = "MUSE"
     private const val PREFS_NAME = "muse_update_prefs"
     private const val KEY_LAST_CHECK = "last_check_ms"
     private const val CHECK_INTERVAL_MS = 24L * 60 * 60 * 1000
@@ -53,6 +53,7 @@ object UpdateChecker {
             val url = URL("https://api.github.com/repos/$GITHUB_OWNER/$GITHUB_REPO/releases/latest")
             val connection = url.openConnection() as HttpURLConnection
             connection.requestMethod = "GET"
+            connection.setRequestProperty("User-Agent", "MUSE-Android")
             connection.setRequestProperty("Accept", "application/vnd.github+json")
             connection.connectTimeout = 10_000
             connection.readTimeout = 10_000
@@ -109,7 +110,7 @@ object UpdateChecker {
 
     private fun isNewer(remote: String, current: String): Boolean {
         fun parse(v: String): List<Int> =
-            v.split(".").mapNotNull { it.toIntOrNull() }
+            v.removePrefix("v").split(".").mapNotNull { it.toIntOrNull() }
         val r = parse(remote)
         val c = parse(current)
         for (i in 0 until maxOf(r.size, c.size)) {
