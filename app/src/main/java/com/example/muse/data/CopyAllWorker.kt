@@ -268,16 +268,17 @@ class CopyAllWorker(
 
     private suspend fun processTrackInternal(dao: TrackDao, track: Track, epoch: Long) {
         val trackId = track.id
+        val museCopyPath = track.museCopyPath
 
-        if (track.copyStatus == Track.CopyStatus.COMPLETED && track.museCopyPath != null) {
-            val copyFile = File(track.museCopyPath)
+        if (track.copyStatus == Track.CopyStatus.COMPLETED && museCopyPath != null) {
+            val copyFile = File(museCopyPath)
             if (!MuseCopyStorage.isExpectedFinalFile(applicationContext, trackId, copyFile)) {
                 hadRetryableFailure = true; return
             }
             when (verifyCopy(copyFile, track.uri)) {
                 is CopyVerification.Verified -> return
                 is CopyVerification.Unverified -> {
-                    safeUpdateIfOwner(dao, trackId, epoch, Track.CopyStatus.COMPLETED_UNVERIFIED, track.museCopyPath, 0L)
+                    safeUpdateIfOwner(dao, trackId, epoch, Track.CopyStatus.COMPLETED_UNVERIFIED, museCopyPath, 0L)
                     return
                 }
                 is CopyVerification.Invalid -> {

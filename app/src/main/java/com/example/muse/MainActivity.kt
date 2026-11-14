@@ -120,6 +120,9 @@ class MainActivity : ComponentActivity() {
     }
 
     private fun setupPlayerPanel() {
+        binding.playerPanel.setOnClickListener {
+            startActivity(android.content.Intent(this, NowPlayingActivity::class.java))
+        }
         binding.btnPlayPause.setOnClickListener {
             val c = controller ?: return@setOnClickListener
             if (c.isPlaying) c.pause() else c.play()

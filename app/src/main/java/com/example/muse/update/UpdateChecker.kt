@@ -3,6 +3,7 @@ package com.example.muse.update
 import android.content.Context
 import android.content.SharedPreferences
 import com.example.muse.BuildConfig
+import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONObject
@@ -79,7 +80,7 @@ object UpdateChecker {
                         val asset = assets.getJSONObject(i)
                         val name = asset.optString("name", "")
                         if (name.endsWith(".apk", ignoreCase = true)) {
-                            apkUrl = asset.optString("browser_download_url", null)
+                            apkUrl = asset.optString("browser_download_url").takeIf { it.isNotBlank() }
                             break
                         }
                     }
@@ -101,6 +102,8 @@ object UpdateChecker {
                 } else {
                     UpdateCheckResult.UpToDate
                 }
+            } catch (e: CancellationException) {
+                throw e
             } catch (e: Exception) {
                 UpdateCheckResult.NetworkError
             } finally {
