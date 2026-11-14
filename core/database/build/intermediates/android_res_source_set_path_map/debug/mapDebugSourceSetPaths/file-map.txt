@@ -1,0 +1,9 @@
+com.example.muse.core.database-pngs-0 /home/lenovo/AndroidStudioProjects/MUSE/core/database/build/generated/res/pngs/debug
+com.example.muse.core.database-updated_navigation_xml-1 /home/lenovo/AndroidStudioProjects/MUSE/core/database/build/generated/updated_navigation_xml/debug
+com.example.muse.core.database-mergeDebugResources-2 /home/lenovo/AndroidStudioProjects/MUSE/core/database/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+com.example.muse.core.database-mergeDebugResources-3 /home/lenovo/AndroidStudioProjects/MUSE/core/database/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+com.example.muse.core.database-debug-4 /home/lenovo/AndroidStudioProjects/MUSE/core/database/build/intermediates/merged_res/debug/mergeDebugResources
+com.example.muse.core.database-debug-5 /home/lenovo/AndroidStudioProjects/MUSE/core/database/build/intermediates/packaged_res/debug/packageDebugResources
+com.example.muse.core.database-debug-6 /home/lenovo/AndroidStudioProjects/MUSE/core/database/src/debug/res
+com.example.muse.core.database-main-7 /home/lenovo/AndroidStudioProjects/MUSE/core/database/src/main/res
+gradleHome-0 /home/lenovo/.gradle

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp"
+    android:background="@color/muse_surface">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Доступно обновление!"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="@color/muse_purple"
+        android:drawableStart="@android:drawable/stat_notify_sync"
+        android:drawablePadding="8dp"
+        android:gravity="center_vertical" />
+
+    <TextView
+        android:id="@+id/dialogCurrentVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:textColor="@color/muse_on_dark_muted"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/dialogNewVersion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="4dp"
+        android:textColor="@color/muse_on_dark"
+        android:textSize="13sp" />
+
+    <TextView
+        android:id="@+id/dialogReleaseNotes"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="12dp"
+        android:textColor="@color/muse_on_dark_muted"
+        android:textSize="12sp"
+        android:maxLines="10"
+        android:ellipsize="end" />
+</LinearLayout>

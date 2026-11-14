@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.MUSE.Xml" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:windowBackground">@color/muse_dark_background</item>
+        <item name="android:statusBarColor">@color/muse_dark_background</item>
+        <item name="android:navigationBarColor">@color/muse_dark_background</item>
+        <item name="colorPrimary">@color/muse_purple</item>
+        <item name="colorSecondary">@color/muse_blue</item>
+        <item name="colorSurface">@color/muse_surface</item>
+        <item name="colorOnSurface">@color/muse_on_dark</item>
+        <item name="colorOnSurfaceVariant">@color/muse_on_dark_muted</item>
+    </style>
+</resources>

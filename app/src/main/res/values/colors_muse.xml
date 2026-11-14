@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="muse_dark_background">#0D0D12</color>
+    <color name="muse_surface">#16161F</color>
+    <color name="muse_purple">#9B6DFF</color>
+    <color name="muse_blue">#5B9BFF</color>
+    <color name="muse_on_dark">#E8E8F0</color>
+    <color name="muse_on_dark_secondary">#B8B8C8</color>
+    <color name="muse_on_dark_muted">#8A8A9A</color>
+    <color name="muse_error">#FF6B6B</color>
+    <color name="muse_divider">#334A6EFF</color>
+</resources>

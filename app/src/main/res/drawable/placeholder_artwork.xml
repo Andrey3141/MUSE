@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="96dp"
+    android:height="96dp"
+    android:viewportWidth="96"
+    android:viewportHeight="96">
+
+    <path
+        android:fillColor="@color/muse_surface"
+        android:pathData="M0,0h96v96h-96z" />
+
+    <path
+        android:pathData="M48,24a24,24 0 1,0 0,48a24,24 0 1,0 0,-48z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:startX="24"
+                android:startY="24"
+                android:endX="72"
+                android:endY="72"
+                android:type="linear">
+                <item android:color="@color/muse_purple" android:offset="0.0" />
+                <item android:color="@color/muse_blue" android:offset="1.0" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <path
+        android:fillColor="@color/muse_dark_background"
+        android:pathData="M44,36h4v20h-4z M52,32h4v24h-4z" />
+</vector>
